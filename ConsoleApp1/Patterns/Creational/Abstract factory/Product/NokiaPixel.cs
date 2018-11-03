@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp1.Patterns.Creational.Abstract_factory.Product
+﻿namespace DesignPattern.Patterns.Creational.Abstract_factory.Product
 {
     /// <summary>  
     /// The 'ProductA1' class  

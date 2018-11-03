@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ConsoleApp1.Patterns.Structural.Facade.Ejemplo2
+namespace DesignPattern.Patterns.Structural.Facade.Ejemplo2
 {
     public class Centralita
     {

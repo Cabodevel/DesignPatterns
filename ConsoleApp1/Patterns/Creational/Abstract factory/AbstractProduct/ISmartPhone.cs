@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp1.Patterns.Creational.Abstract_factory
+﻿namespace DesignPattern.Patterns.Creational.Abstract_factory
 {
     /// <summary>  
     /// The 'AbstractProductA' interface  

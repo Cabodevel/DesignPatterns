@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp1.Patterns.Structural.Adapter
+﻿namespace DesignPattern.Patterns.Structural.Adapter
 {
     /// <summary>
     /// Adapta los valores no válidos a nuestras necesidades

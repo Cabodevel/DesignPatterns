@@ -1,13 +1,13 @@
-﻿using ConsoleApp1.Patterns;
-using ConsoleApp1.Patterns.Creational.Abstract_factory;
-using ConsoleApp1.Patterns.Creational.Abstract_factory.Client;
-using ConsoleApp1.Patterns.Factory;
-using ConsoleApp1.Patterns.Structural.Adapter;
-using ConsoleApp1.Patterns.Structural.Facade;
-using ConsoleApp1.Patterns.Structural.Facade.Ejemplo2;
+﻿using DesignPattern.Patterns;
+using DesignPattern.Patterns.Creational.Abstract_factory;
+using DesignPattern.Patterns.Creational.Abstract_factory.Client;
+using DesignPattern.Patterns.Factory;
+using DesignPattern.Patterns.Structural.Adapter;
+using DesignPattern.Patterns.Structural.Facade;
+using DesignPattern.Patterns.Structural.Facade.Ejemplo2;
 using System;
 
-namespace ConsoleApp1
+namespace DesignPattern
 {
     class Program
     {

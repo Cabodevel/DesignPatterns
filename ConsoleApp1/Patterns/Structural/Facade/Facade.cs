@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1.Patterns.Structural.Facade
+namespace DesignPattern.Patterns.Structural.Facade
 {
     /// <summary>
     /// The 'Subsystem ClassA' class

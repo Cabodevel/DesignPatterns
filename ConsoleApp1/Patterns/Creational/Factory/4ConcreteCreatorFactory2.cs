@@ -1,5 +1,5 @@
 ﻿
-namespace ConsoleApp1.Patterns.Factory
+namespace DesignPattern.Patterns.Factory
 {
     public class _4ConcreteCreatorFactory2 : _3CreatorFactory
     {

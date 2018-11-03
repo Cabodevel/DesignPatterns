@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp1.Patterns.Creational.Abstract_factory.Client
+﻿namespace DesignPattern.Patterns.Creational.Abstract_factory.Client
 {
     /// <summary>  
     /// The 'Client' class  

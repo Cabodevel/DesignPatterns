@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp1.Patterns.Factory
+﻿namespace DesignPattern.Patterns.Factory
 {
     public abstract class _3CreatorFactory
     {

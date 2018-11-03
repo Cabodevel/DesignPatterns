@@ -1,6 +1,6 @@
-﻿using ConsoleApp1.Patterns.Creational.Abstract_factory.Product;
+﻿using DesignPattern.Patterns.Creational.Abstract_factory.Product;
 
-namespace ConsoleApp1.Patterns.Creational.Abstract_factory
+namespace DesignPattern.Patterns.Creational.Abstract_factory
 {
     /// <summary>  
     /// The 'ConcreteFactory2' class.  

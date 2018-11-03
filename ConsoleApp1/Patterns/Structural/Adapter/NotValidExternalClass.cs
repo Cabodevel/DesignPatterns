@@ -3,7 +3,7 @@
 /// <summary>
 /// Simulacion de clase de libreria externa que no se puede manipular
 /// </summary>
-namespace ConsoleApp1.Patterns.Structural.Adapter
+namespace DesignPattern.Patterns.Structural.Adapter
 {
     public interface INotValidExternal
     {

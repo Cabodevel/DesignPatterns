@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace ConsoleApp1.Patterns.Behavioral.Iterator
+namespace DesignPattern.Patterns.Behavioral.Iterator
 {
     /// <summary>
     /// The 'Aggregate' abstract class

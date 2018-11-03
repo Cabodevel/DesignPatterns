@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp1.Patterns.Creational.Abstract_factory
+﻿namespace DesignPattern.Patterns.Creational.Abstract_factory
 {
     //1 Abstract factory
     public interface ImobilePhone

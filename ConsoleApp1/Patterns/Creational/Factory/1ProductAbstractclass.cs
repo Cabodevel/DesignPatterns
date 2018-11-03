@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 /// Define an interface for creating an object, but let subclasses decide which class to instantiate. 
 /// Factory Method lets a class defer instantiation to subclasses.
 /// </summary>
-namespace ConsoleApp1.Patterns.Factory
+namespace DesignPattern.Patterns.Factory
 {
     public abstract class _1ProductAbstractclass
     {
