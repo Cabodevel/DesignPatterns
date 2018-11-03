@@ -1,4 +1,5 @@
 ﻿using DesignPattern.Patterns;
+using DesignPattern.Patterns.Behavioral.Iterator;
 using DesignPattern.Patterns.Creational.Abstract_factory;
 using DesignPattern.Patterns.Creational.Abstract_factory.Client;
 using DesignPattern.Patterns.Factory;
@@ -18,7 +19,8 @@ namespace DesignPattern
             //GetAbstractFactoryPattern();
             //GetFacadePattern();
             //GetFacadePattern2();
-            GetAdapterPattern();
+            //GetAdapterPattern();
+            GetIteratorPattern();
             Console.ReadKey();
         }
 
@@ -120,7 +122,27 @@ namespace DesignPattern
         #endregion
 
         #region -Behavioral Patterns
-            
+        private static void GetIteratorPattern()
+        {
+            ConcreteAggregate a = new ConcreteAggregate();
+            a[0] = "Item A";
+            a[1] = "Item B";
+            a[2] = "Item C";
+            a[3] = "Item D";
+
+            Iterator i = a.CreateIterator();
+
+            Console.WriteLine("Iterating over collection:");
+
+            object item = i.First();
+            while (item != null)
+            {
+                Console.WriteLine(item);
+                item = i.Next();
+            }
+
+            Console.ReadKey();
+        }
         #endregion
     }
 
