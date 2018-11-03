@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{06BC37E0-07CA-4D2C-A34D-B448AC0652DA}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ConsoleApp1</RootNamespace>
+    <AssemblyName>ConsoleApp1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Patterns\Behavioral\Iterator\Iterator.cs" />
+    <Compile Include="Patterns\Creational\Abstract factory\AbstractFactory\ImobilePhone.cs" />
+    <Compile Include="Patterns\Creational\Abstract factory\AbstractProduct\INormalPhone.cs" />
+    <Compile Include="Patterns\Creational\Abstract factory\AbstractProduct\ISmartPhone.cs" />
+    <Compile Include="Patterns\Creational\Abstract factory\Client\MobileClient.cs" />
+    <Compile Include="Patterns\Creational\Abstract factory\ConcreteFactory\Nokia.cs" />
+    <Compile Include="Patterns\Creational\Abstract factory\Product\Nokia1600.cs" />
+    <Compile Include="Patterns\Creational\Abstract factory\ConcreteFactory\Samsung.cs" />
+    <Compile Include="Patterns\Creational\Abstract factory\Product\NokiaPixel.cs" />
+    <Compile Include="Patterns\Creational\Abstract factory\Product\SamsungGalaxy.cs" />
+    <Compile Include="Patterns\Creational\Abstract factory\Product\SamsungGuru.cs" />
+    <Compile Include="Patterns\Creational\Factory\1ProductAbstractclass.cs" />
+    <Compile Include="Patterns\Creational\Factory\2ConcreteProduct1.cs" />
+    <Compile Include="Patterns\Creational\Factory\2ConcreteProduct2.cs" />
+    <Compile Include="Patterns\Creational\Factory\3CreatorFactory.cs" />
+    <Compile Include="Patterns\Creational\Factory\4ConcreteCreatorFactory1.cs" />
+    <Compile Include="Patterns\Creational\Factory\4ConcreteCreatorFactory2.cs" />
+    <Compile Include="Patterns\Creational\Singleton\SingletonClass.cs" />
+    <Compile Include="Patterns\Structural\Adapter\AdapterSolution\IAdapter.cs" />
+    <Compile Include="Patterns\Structural\Adapter\NotValidExternalClass.cs" />
+    <Compile Include="Patterns\Structural\Facade\Ejemplo2\Centralita.cs" />
+    <Compile Include="Patterns\Structural\Facade\Facade.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Patterns\Behavioral\Chain\" />
+    <Folder Include="Patterns\Behavioral\Command\" />
+    <Folder Include="Patterns\Behavioral\Interpreter\" />
+    <Folder Include="Patterns\Behavioral\Mediator\" />
+    <Folder Include="Patterns\Behavioral\Memento\" />
+    <Folder Include="Patterns\Behavioral\Observer\" />
+    <Folder Include="Patterns\Behavioral\State\" />
+    <Folder Include="Patterns\Behavioral\Strategy\" />
+    <Folder Include="Patterns\Behavioral\TemplateMethod\" />
+    <Folder Include="Patterns\Behavioral\Visitor\" />
+    <Folder Include="Patterns\Creational\Builder\" />
+    <Folder Include="Patterns\Creational\Prototype\" />
+    <Folder Include="Patterns\Structural\Bridge\" />
+    <Folder Include="Patterns\Structural\Composite\" />
+    <Folder Include="Patterns\Structural\Decorator\" />
+    <Folder Include="Patterns\Structural\FlyWeight\" />
+    <Folder Include="Patterns\Structural\Proxy\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
