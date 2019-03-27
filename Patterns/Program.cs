@@ -1,4 +1,5 @@
-﻿using DesignPattern.Patterns;
+﻿using ConsoleApp1.Patterns.Structural.Decorator;
+using DesignPattern.Patterns;
 using DesignPattern.Patterns.Behavioral.Iterator;
 using DesignPattern.Patterns.Creational.Abstract_factory;
 using DesignPattern.Patterns.Creational.Abstract_factory.Client;
@@ -20,11 +21,30 @@ namespace DesignPattern
             //GetFacadePattern();
             //GetFacadePattern2();
             //GetAdapterPattern();
-            GetIteratorPattern();
+            //GetIteratorPattern();
+            GetDecoratorPattern();
             Console.ReadKey();
         }
 
         #region -Creational patterns
+        private static void GetDecoratorPattern()
+        {
+            VehiculoBase v = new VehiculoBase();
+           
+            Console.WriteLine(v.GetDatosVehiculos());
+            Camion cm = new Camion(v);
+            Console.WriteLine(cm.GetDatosVehiculos());
+
+            CamionConRemolque c = new CamionConRemolque(cm);
+            c.Peso = 10000;
+            Console.WriteLine(c.GetDatosVehiculos());
+            CamionConRemolqueFrio cF = new CamionConRemolqueFrio(c);
+            cF.Temperatura = 10;
+            Console.WriteLine(cF.GetDatosVehiculos());
+            Console.WriteLine(((CamionConRemolque)cF.VehiculoPadre).Peso);
+            Console.WriteLine(cF.Temperatura);
+            
+        }
 
         private static void GetSingletonPattern()
         {
