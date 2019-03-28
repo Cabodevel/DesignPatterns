@@ -1,4 +1,5 @@
-﻿using ConsoleApp1.Patterns.Structural.Decorator;
+﻿using ConsoleApp1.Patterns.Structural.Composite;
+using ConsoleApp1.Patterns.Structural.Decorator;
 using DesignPattern.Patterns;
 using DesignPattern.Patterns.Behavioral.Iterator;
 using DesignPattern.Patterns.Creational.Abstract_factory;
@@ -22,8 +23,28 @@ namespace DesignPattern
             //GetFacadePattern2();
             //GetAdapterPattern();
             //GetIteratorPattern();
-            GetDecoratorPattern();
+            //GetDecoratorPattern();
+            GetCompositePattern();
             Console.ReadKey();
+        }
+
+        private static void GetCompositePattern()
+        {
+            VehiculoBaseComposite v = new VehiculoBaseComposite();
+
+            Console.WriteLine(v.GetChilds());
+            CamionComposite cm = new CamionComposite(v);
+            Console.WriteLine(cm.GetChilds());
+            CamionConRemolqueComposite c = new CamionConRemolqueComposite(cm);
+            c.Peso = 10000;
+            Console.WriteLine(c.GetChilds());
+            CamionConRemolqueFrioComposite cF = new CamionConRemolqueFrioComposite(cm);
+            cF.Temperatura = 10;
+            Console.WriteLine(cF.GetChilds());
+            cF.Remove(cm);
+            cF.Remove(c);
+            Console.WriteLine(cF.Temperatura);
+            Console.WriteLine(cF.GetChilds());
         }
 
         #region -Creational patterns
@@ -42,6 +63,7 @@ namespace DesignPattern
             cF.Temperatura = 10;
             Console.WriteLine(cF.GetDatosVehiculos());
             Console.WriteLine(((CamionConRemolque)cF.VehiculoPadre).Peso);
+            
             Console.WriteLine(cF.Temperatura);
             
         }
