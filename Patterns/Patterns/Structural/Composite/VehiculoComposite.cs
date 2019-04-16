@@ -33,14 +33,6 @@ namespace ConsoleApp1.Patterns.Structural.Composite
                     childs.Remove(v);
             }
         }
-        //public virtual VehiculoComposite GetChild(VehiculoComposite v)
-        //{
-        //    if (childs != null)
-        //    {
-        //        return childs(v);
-        //    }
-        //    return "";
-        //}
         
         public virtual List<VehiculoComposite> GetChildsList()
         {

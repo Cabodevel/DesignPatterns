@@ -56,6 +56,7 @@
     <Compile Include="Patterns\Creational\Abstract factory\Product\NokiaPixel.cs" />
     <Compile Include="Patterns\Creational\Abstract factory\Product\SamsungGalaxy.cs" />
     <Compile Include="Patterns\Creational\Abstract factory\Product\SamsungGuru.cs" />
+    <Compile Include="Patterns\Creational\Builder\Builder.cs" />
     <Compile Include="Patterns\Creational\Factory\1ProductAbstractclass.cs" />
     <Compile Include="Patterns\Creational\Factory\2ConcreteProduct1.cs" />
     <Compile Include="Patterns\Creational\Factory\2ConcreteProduct2.cs" />
@@ -96,7 +97,6 @@
     <Folder Include="Patterns\Behavioral\Strategy\" />
     <Folder Include="Patterns\Behavioral\TemplateMethod\" />
     <Folder Include="Patterns\Behavioral\Visitor\" />
-    <Folder Include="Patterns\Creational\Builder\" />
     <Folder Include="Patterns\Creational\Prototype\" />
     <Folder Include="Patterns\Structural\Bridge\" />
     <Folder Include="Patterns\Structural\FlyWeight\" />

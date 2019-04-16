@@ -1,4 +1,5 @@
-﻿using ConsoleApp1.Patterns.Structural.Composite;
+﻿using ConsoleApp1.Patterns.Creational.Builder;
+using ConsoleApp1.Patterns.Structural.Composite;
 using ConsoleApp1.Patterns.Structural.Decorator;
 using DesignPattern.Patterns;
 using DesignPattern.Patterns.Behavioral.Iterator;
@@ -24,7 +25,8 @@ namespace DesignPattern
             //GetAdapterPattern();
             //GetIteratorPattern();
             //GetDecoratorPattern();
-            GetCompositePattern();
+            //GetCompositePattern();
+            GetBuilderPattern();
             Console.ReadKey();
         }
 
@@ -66,6 +68,30 @@ namespace DesignPattern
             
             Console.WriteLine(cF.Temperatura);
             
+        }
+
+        private static void GetBuilderPattern()
+        {
+            // Create director and builders
+
+            Director director = new Director();
+
+            Builder b1 = new ConcreteBuilder1();
+            Builder b2 = new ConcreteBuilder2();
+
+            // Construct two products
+
+            director.Construct(b1);
+            Product p1 = b1.GetResult();
+            p1.Show();
+
+            director.Construct(b2);
+            Product p2 = b2.GetResult();
+            p2.Show();
+
+            // Wait for user
+
+            Console.ReadKey();
         }
 
         private static void GetSingletonPattern()
