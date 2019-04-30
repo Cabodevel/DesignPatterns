@@ -63,6 +63,9 @@
     <Compile Include="Patterns\Creational\Factory\3CreatorFactory.cs" />
     <Compile Include="Patterns\Creational\Factory\4ConcreteCreatorFactory1.cs" />
     <Compile Include="Patterns\Creational\Factory\4ConcreteCreatorFactory2.cs" />
+    <Compile Include="Patterns\Creational\Prototype\BasicCar.cs" />
+    <Compile Include="Patterns\Creational\Prototype\Nano.cs" />
+    <Compile Include="Patterns\Creational\Prototype\Ford.cs" />
     <Compile Include="Patterns\Creational\Singleton\SingletonClass.cs" />
     <Compile Include="Patterns\Structural\Adapter\AdapterSolution\IAdapter.cs" />
     <Compile Include="Patterns\Structural\Adapter\NotValidExternalClass.cs" />
@@ -82,6 +85,7 @@
     <Compile Include="Patterns\Structural\Facade\Facade.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Threading\Volatile\BackgroundTaskDemo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -97,7 +101,6 @@
     <Folder Include="Patterns\Behavioral\Strategy\" />
     <Folder Include="Patterns\Behavioral\TemplateMethod\" />
     <Folder Include="Patterns\Behavioral\Visitor\" />
-    <Folder Include="Patterns\Creational\Prototype\" />
     <Folder Include="Patterns\Structural\Bridge\" />
     <Folder Include="Patterns\Structural\FlyWeight\" />
     <Folder Include="Patterns\Structural\Proxy\" />

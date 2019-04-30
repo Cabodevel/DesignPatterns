@@ -1,6 +1,8 @@
 ﻿using ConsoleApp1.Patterns.Creational.Builder;
+using ConsoleApp1.Patterns.Creational.Prototype;
 using ConsoleApp1.Patterns.Structural.Composite;
 using ConsoleApp1.Patterns.Structural.Decorator;
+using ConsoleApp1.Threading.Volatile;
 using DesignPattern.Patterns;
 using DesignPattern.Patterns.Behavioral.Iterator;
 using DesignPattern.Patterns.Creational.Abstract_factory;
@@ -17,6 +19,7 @@ namespace DesignPattern
     {
         static void Main(string[] args)
         {
+            #region -Patterns methods
             //GetSingletonPattern();
             //GetFactoryPattern();
             //GetAbstractFactoryPattern();
@@ -26,48 +29,35 @@ namespace DesignPattern
             //GetIteratorPattern();
             //GetDecoratorPattern();
             //GetCompositePattern();
-            GetBuilderPattern();
+            //GetBuilderPattern(); 
+            GetPrototypePattern();
+            #endregion
+            #region -Threading Methods
+            //BackgroundTaskDemo.MainThread();
+            #endregion
             Console.ReadKey();
         }
 
-        private static void GetCompositePattern()
-        {
-            VehiculoBaseComposite v = new VehiculoBaseComposite();
-
-            Console.WriteLine(v.GetChilds());
-            CamionComposite cm = new CamionComposite(v);
-            Console.WriteLine(cm.GetChilds());
-            CamionConRemolqueComposite c = new CamionConRemolqueComposite(cm);
-            c.Peso = 10000;
-            Console.WriteLine(c.GetChilds());
-            CamionConRemolqueFrioComposite cF = new CamionConRemolqueFrioComposite(cm);
-            cF.Temperatura = 10;
-            Console.WriteLine(cF.GetChilds());
-            cF.Remove(cm);
-            cF.Remove(c);
-            Console.WriteLine(cF.Temperatura);
-            Console.WriteLine(cF.GetChilds());
-        }
 
         #region -Creational patterns
-        private static void GetDecoratorPattern()
-        {
-            VehiculoBase v = new VehiculoBase();
-           
-            Console.WriteLine(v.GetDatosVehiculos());
-            Camion cm = new Camion(v);
-            Console.WriteLine(cm.GetDatosVehiculos());
 
-            CamionConRemolque c = new CamionConRemolque(cm);
-            c.Peso = 10000;
-            Console.WriteLine(c.GetDatosVehiculos());
-            CamionConRemolqueFrio cF = new CamionConRemolqueFrio(c);
-            cF.Temperatura = 10;
-            Console.WriteLine(cF.GetDatosVehiculos());
-            Console.WriteLine(((CamionConRemolque)cF.VehiculoPadre).Peso);
-            
-            Console.WriteLine(cF.Temperatura);
-            
+        private static void GetPrototypePattern()
+        {
+            Console.WriteLine("***Prototype Pattern***\n");
+            //Base or Original Copy
+            BasicCar nano_base = new Nano("Green Nano") { Price = 100000 };
+            BasicCar ford_base = new Ford("Ford Yellow") { Price = 500000 };
+            BasicCar bc1;
+            //Nano
+            bc1 = nano_base.Clone();
+            bc1.Price = nano_base.Price + BasicCar.SetPrice();
+            Console.WriteLine("Car is: {0}, and it's price is Rs. {1}",bc1.ModelName,bc1.Price);
+            //Ford
+            bc1 = ford_base.Clone();
+            bc1.Price = ford_base.Price + BasicCar.SetPrice();
+            Console.WriteLine("Car is: {0}, and it's price is Rs. {1}",
+            bc1.ModelName, bc1.Price);
+            Console.ReadLine();
         }
 
         private static void GetBuilderPattern()
@@ -96,8 +86,8 @@ namespace DesignPattern
 
         private static void GetSingletonPattern()
         {
-            SingletonClass s = SingletonClass.Instance();
-            SingletonClass s2 = SingletonClass.Instance();
+            SingletonClass s = SingletonClass.Instance;
+            SingletonClass s2 = SingletonClass.Instance;
 
             if (s == s2)
                 Console.WriteLine("s and s2 are equals");
@@ -155,11 +145,51 @@ namespace DesignPattern
             Console.WriteLine(samsungClient.GetNormalPhoneModelDetails());
 
             Console.ReadKey();
-        } 
+        }
 
         #endregion
 
         #region -StructuralPatterns
+
+        private static void GetDecoratorPattern()
+        {
+            VehiculoBase v = new VehiculoBase();
+
+            Console.WriteLine(v.GetDatosVehiculos());
+            Camion cm = new Camion(v);
+            Console.WriteLine(cm.GetDatosVehiculos());
+
+            CamionConRemolque c = new CamionConRemolque(cm);
+            c.Peso = 10000;
+            Console.WriteLine(c.GetDatosVehiculos());
+            CamionConRemolqueFrio cF = new CamionConRemolqueFrio(c);
+            cF.Temperatura = 10;
+            Console.WriteLine(cF.GetDatosVehiculos());
+            Console.WriteLine(((CamionConRemolque)cF.VehiculoPadre).Peso);
+
+            Console.WriteLine(cF.Temperatura);
+
+        }
+
+        private static void GetCompositePattern()
+        {
+            VehiculoBaseComposite v = new VehiculoBaseComposite();
+
+            Console.WriteLine(v.GetChilds());
+            CamionComposite cm = new CamionComposite(v);
+            Console.WriteLine(cm.GetChilds());
+            CamionConRemolqueComposite c = new CamionConRemolqueComposite(cm);
+            c.Peso = 10000;
+            Console.WriteLine(c.GetChilds());
+            CamionConRemolqueFrioComposite cF = new CamionConRemolqueFrioComposite(cm);
+            cF.Temperatura = 10;
+            Console.WriteLine(cF.GetChilds());
+            cF.Remove(cm);
+            cF.Remove(c);
+            Console.WriteLine(cF.Temperatura);
+            Console.WriteLine(cF.GetChilds());
+        }
+
         private static void GetAdapterPattern()
         {
             ValidAdapterClass validAdapter = new ValidAdapterClass();

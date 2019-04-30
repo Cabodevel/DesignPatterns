@@ -1,25 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DesignPattern.Patterns
+﻿namespace DesignPattern.Patterns
 {
-    public class SingletonClass
+    public sealed class SingletonClass
     {
-        private static SingletonClass _singleton;
+        private static volatile SingletonClass _singleton = new SingletonClass();
+        private static int _instances = 0;
+        private static readonly object _collisionLock = new object();
 
-        protected SingletonClass()
+        private SingletonClass()
         {
-
+            _instances++;
         }
 
-        public static SingletonClass Instance()
+        public static SingletonClass Instance
         {
-            if (_singleton == null)
-                _singleton = new SingletonClass();
-            return _singleton;
+            get { lock (_collisionLock) { return _singleton; } }
         }
 
     }
