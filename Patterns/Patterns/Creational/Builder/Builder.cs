@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.Patterns.Creational.Builder
 {
+    /// <summary>
+    /// Director class. Sets the parts of IBuilder
+    /// </summary>
     class Director
-
     {
-        // Builder uses a complex series of steps
-
-        public void Construct(Builder builder)
+        public void Construct(IBuilder builder)
         {
             builder.BuildPartA();
             builder.BuildPartB();
@@ -19,85 +19,70 @@ namespace ConsoleApp1.Patterns.Creational.Builder
     }
 
     /// <summary>
-
-    /// The 'Builder' abstract class
-
+    /// The 'Builder' interface
     /// </summary>
-
-    abstract class Builder
-
+    interface IBuilder
     {
-        public abstract void BuildPartA();
-        public abstract void BuildPartB();
-        public abstract Product GetResult();
+        void BuildPartA();
+        void BuildPartB();
+        Product GetResult();
     }
 
+    #region Concrete builders
     /// <summary>
-
-    /// The 'ConcreteBuilder1' class
-
+    /// Implements IBuilder and can be build by Director class
     /// </summary>
-
-    class ConcreteBuilder1 : Builder
+    class ConcreteBuilder1 : IBuilder
 
     {
         private Product _product = new Product();
 
-        public override void BuildPartA()
+        public void BuildPartA()
         {
-            _product.Add("PartA");
+            _product.Add(new ComplexObject("o1", true));
         }
 
-        public override void BuildPartB()
+        public void BuildPartB()
         {
-            _product.Add("PartB");
+            _product.Add(new ComplexObject("o2", false));
         }
 
-        public override Product GetResult()
+        public Product GetResult()
         {
             return _product;
         }
     }
 
-    /// <summary>
-
-    /// The 'ConcreteBuilder2' class
-
-    /// </summary>
-
-    class ConcreteBuilder2 : Builder
+    class ConcreteBuilder2 : IBuilder
 
     {
         private Product _product = new Product();
 
-        public override void BuildPartA()
+        public void BuildPartA()
         {
-            _product.Add("PartX");
+            _product.Add(new ComplexObject("o3", true));
         }
 
-        public override void BuildPartB()
+        public void BuildPartB()
         {
-            _product.Add("PartY");
+            _product.Add(new ComplexObject("o4", false));
         }
 
-        public override Product GetResult()
+        public Product GetResult()
         {
             return _product;
         }
-    }
+    } 
+    #endregion
 
     /// <summary>
-
-    /// The 'Product' class
-
+    /// Is the class that needs to add complex objects
     /// </summary>
-
     class Product
-
     {
-        private List<string> _parts = new List<string>();
+        private List<ComplexObject> _parts = new List<ComplexObject>();
 
-        public void Add(string part)
+        public void Add(ComplexObject part)
         {
             _parts.Add(part);
         }
@@ -105,8 +90,26 @@ namespace ConsoleApp1.Patterns.Creational.Builder
         public void Show()
         {
             Console.WriteLine("\nProduct Parts -------");
-            foreach (string part in _parts)
-                Console.WriteLine(part);
+            foreach (var part in _parts)
+            {
+                Console.WriteLine(part.Name);
+                Console.WriteLine(part.IsValid);
+
+            }
+        }
+    }
+
+    /// <summary>
+    /// An object to test
+    /// </summary>
+    public class ComplexObject
+    {
+        public string Name { get; set; }
+        public bool IsValid { get; set; }
+        public ComplexObject(string name, bool isvalid)
+        {
+            Name = name;
+            IsValid = isvalid;
         }
     }
 }

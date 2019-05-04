@@ -19,7 +19,7 @@ namespace DesignPattern
     {
         static void Main(string[] args)
         {
-            #region -Patterns methods
+            #region -Patterns methods calls
             //GetSingletonPattern();
             //GetFactoryPattern();
             //GetAbstractFactoryPattern();
@@ -29,10 +29,11 @@ namespace DesignPattern
             //GetIteratorPattern();
             //GetDecoratorPattern();
             //GetCompositePattern();
-            //GetBuilderPattern(); 
-            GetPrototypePattern();
+            GetBuilderPattern(); 
+            //GetPrototypePattern();
             #endregion
-            #region -Threading Methods
+
+            #region -Threading Methods calls
             //BackgroundTaskDemo.MainThread();
             #endregion
             Console.ReadKey();
@@ -63,14 +64,12 @@ namespace DesignPattern
         private static void GetBuilderPattern()
         {
             // Create director and builders
-
             Director director = new Director();
 
             Builder b1 = new ConcreteBuilder1();
             Builder b2 = new ConcreteBuilder2();
 
             // Construct two products
-
             director.Construct(b1);
             Product p1 = b1.GetResult();
             p1.Show();
