@@ -1,8 +1,7 @@
-﻿using ConsoleApp1.Patterns.Creational.Builder;
+﻿using ConsoleApp1.Patterns.Creational;
 using ConsoleApp1.Patterns.Creational.Prototype;
 using ConsoleApp1.Patterns.Structural.Composite;
 using ConsoleApp1.Patterns.Structural.Decorator;
-using ConsoleApp1.Threading.Volatile;
 using DesignPattern.Patterns;
 using DesignPattern.Patterns.Behavioral.Iterator;
 using DesignPattern.Patterns.Creational.Abstract_factory;
@@ -66,8 +65,8 @@ namespace DesignPattern
             // Create director and builders
             Director director = new Director();
 
-            Builder b1 = new ConcreteBuilder1();
-            Builder b2 = new ConcreteBuilder2();
+            IBuilder b1 = new ConcreteBuilder1();
+            IBuilder b2 = new ConcreteBuilder2();
 
             // Construct two products
             director.Construct(b1);

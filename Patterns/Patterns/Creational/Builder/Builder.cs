@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1.Patterns.Creational.Builder
+namespace ConsoleApp1.Patterns.Creational
 {
     /// <summary>
     /// Director class. Sets the parts of IBuilder
