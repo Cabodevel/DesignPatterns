@@ -1,5 +1,6 @@
 ﻿using ConsoleApp1.Patterns.Creational;
 using ConsoleApp1.Patterns.Creational.Prototype;
+using ConsoleApp1.Patterns.Creational.SimpleFactory;
 using ConsoleApp1.Patterns.Structural.Composite;
 using ConsoleApp1.Patterns.Structural.Decorator;
 using DesignPattern.Patterns;
@@ -28,8 +29,9 @@ namespace DesignPattern
             //GetIteratorPattern();
             //GetDecoratorPattern();
             //GetCompositePattern();
-            GetBuilderPattern(); 
+            //GetBuilderPattern(); 
             //GetPrototypePattern();
+            GetSingleFactoryPattern();
             #endregion
 
             #region -Threading Methods calls
@@ -143,6 +145,19 @@ namespace DesignPattern
             Console.WriteLine(samsungClient.GetNormalPhoneModelDetails());
 
             Console.ReadKey();
+        }
+
+        private static void GetSingleFactoryPattern()
+        {
+            Console.WriteLine("Choose an animal:");
+            Console.WriteLine("0 for Dog");
+            Console.WriteLine("1 for Tiger");
+            string stringInput = Console.ReadLine();
+            int.TryParse(stringInput, out int input);
+            SimpleFactory factory = new SimpleFactory();
+            var animal = factory.CreateAnimal(input);
+            Console.WriteLine(animal.Action());
+            Console.WriteLine(animal.Speak());
         }
 
         #endregion

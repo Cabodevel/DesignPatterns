@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DesignPattern.Patterns.Factory
+﻿namespace DesignPattern.Patterns.Factory
 {
     public class _2ConcreteProduct1 : _1ProductAbstractclass
     {
