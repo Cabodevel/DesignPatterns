@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace ConsoleApp1.Threading.Volatile
+namespace NetCoreDessignPatterns.Threading.Volatile
 {
     public static class BackgroundTaskDemo
     {

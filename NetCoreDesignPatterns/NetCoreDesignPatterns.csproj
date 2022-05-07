@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Patterns\Creational\Builder\Description.txt" />
+    <None Remove="Patterns\Creational\Prototype\Description.txt" />
+    <None Remove="Patterns\Creational\Singleton\Description.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Patterns\Creational\Builder\Description.txt" />
+    <Content Include="Patterns\Creational\Prototype\Description.txt" />
+    <Content Include="Patterns\Creational\Singleton\Description.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Patterns\Behavioral\chain\" />
+    <Folder Include="Patterns\Behavioral\command\" />
+    <Folder Include="Patterns\Behavioral\interpreter\" />
+    <Folder Include="Patterns\Behavioral\mediator\" />
+    <Folder Include="Patterns\Behavioral\memento\" />
+    <Folder Include="Patterns\Behavioral\observer\" />
+    <Folder Include="Patterns\Behavioral\state\" />
+    <Folder Include="Patterns\Behavioral\templatemethod\" />
+    <Folder Include="Patterns\Behavioral\visitor\" />
+    <Folder Include="Patterns\Structural\bridge\" />
+    <Folder Include="Patterns\Structural\flyweight\" />
+    <Folder Include="Patterns\Structural\proxy\" />
+  </ItemGroup>
+
+</Project>

@@ -1,8 +1,8 @@
-﻿using ConsoleApp1.Patterns.Creational;
-using ConsoleApp1.Patterns.Creational.Prototype;
-using ConsoleApp1.Patterns.Creational.SimpleFactory;
-using ConsoleApp1.Patterns.Structural.Composite;
-using ConsoleApp1.Patterns.Structural.Decorator;
+﻿using NetCoreDessignPatterns.Patterns.Creational;
+using NetCoreDessignPatterns.Patterns.Creational.Prototype;
+using NetCoreDessignPatterns.Patterns.Creational.SimpleFactory;
+using NetCoreDessignPatterns.Patterns.Structural.Composite;
+using NetCoreDessignPatterns.Patterns.Structural.Decorator;
 using DesignPattern.Patterns;
 using DesignPattern.Patterns.Behavioral.Iterator;
 using DesignPattern.Patterns.Creational.Abstract_factory;
